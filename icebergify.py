@@ -203,9 +203,5 @@ def berg():
 
     return render_template('berg.html', value=encoded, height=iceberg_img2.height // 2)
 
-@app.route('/data/<filename>')
-def display_image(filename):
-    return send_from_directory('data', filename, as_attachment=True)
-
 if __name__ == "__main__":
     app.run(host='0.0.0.0')
