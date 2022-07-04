@@ -1,18 +1,16 @@
 import base64
+import json
+import os
 from datetime import datetime, timedelta
 from functools import cache
 from io import BytesIO
-import os
-import re
-import sys
-from typing import Literal, OrderedDict
-from flask import Flask, render_template, send_from_directory, redirect, request
-from PIL import Image, ImageFont, ImageDraw
+from typing import OrderedDict
+
 import tekore as tk
-from werkzeug.middleware.proxy_fix import ProxyFix
+from flask import Flask, render_template, request, send_from_directory
 from fontTools.ttLib import TTFont
-from fontTools.unicode import Unicode
-import json
+from PIL import Image, ImageDraw, ImageFont
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'filesystem'
@@ -79,8 +77,6 @@ def berg():
 
         name = request.form['name']
         
-        #artists = {artist: get_spotify_popularity(artist) for artist, plays in sorted(get_artist_playcount(timedelta(days=2)).items(), key=lambda item: item[1])}
-
         artists = {}
         for term in [None, timedelta(days=30*6), timedelta(days=4 * 7)]:
             temp_artists = OrderedDict(sorted(get_artist_playcount(term).items(), key=lambda item: item[1])[:50])
