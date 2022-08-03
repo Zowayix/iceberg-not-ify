@@ -7,7 +7,7 @@ from io import BytesIO
 from typing import OrderedDict
 
 import tekore as tk
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, request
 from fontTools.ttLib import TTFont
 from PIL import Image, ImageDraw, ImageFont
 from werkzeug.middleware.proxy_fix import ProxyFix
