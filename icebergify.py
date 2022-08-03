@@ -108,7 +108,7 @@ def berg():
             iceberg[section] = artists_sorted
 
         ###FONT WORK
-        intro = ImageFont.truetype("Intro Regular Regular.ttf", 55)
+        intro_font = ImageFont.truetype("Intro Regular Regular.ttf", 55)
         noto = ImageFont.truetype("static/fonts/NotoSans-Regular.ttf", 55)
         korean = ImageFont.truetype("static/fonts/NotoSansKR-Regular.otf", 55)
         japanese = ImageFont.truetype("static/fonts/rounded-mgenplus-1cp-regular.ttf", 55)
@@ -130,7 +130,7 @@ def berg():
                 if has_glyph(intro_ttf, char):
                     count += 1
             if count == len(artist):
-                return(intro)
+                return(intro_font)
             
             count = 0
             for char in artist:
@@ -153,7 +153,7 @@ def berg():
             if count == len(artist):
                 return(japanese)
             
-            return(intro)
+            return(intro_font)
         
         ###
         iceberg_img2 = Image.open("iceberg_blank2.jpg")
