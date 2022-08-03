@@ -109,19 +109,14 @@ def berg():
 
         ###FONT WORK
         intro = ImageFont.truetype("Intro Regular Regular.ttf", 55)
-        noto = ImageFont.truetype("NotoSans-Regular.ttf", 55)
-        #korean = ImageFont.truetype("NotoSansKR-Regular.otf", 55)
-        korean = ImageFont.truetype('NotoSansCJK-Regular.ttc', index=1)
-        #japanese = ImageFont.truetype("rounded-mgenplus-1cp-regular.ttf", 55)
-        japanese = ImageFont.truetype('NotoSansCJK-Regular.ttc', index=0)
+        noto = ImageFont.truetype("static/fonts/NotoSans-Regular.ttf", 55)
+        korean = ImageFont.truetype("static/fonts/NotoSansKR-Regular.otf", 55)
+        japanese = ImageFont.truetype("static/fonts/rounded-mgenplus-1cp-regular.ttf", 55)
 
         intro_ttf = TTFont('Intro Regular Regular.ttf')
-        #noto_ttf = TTFont('NotoSans-Regular.ttf')
-        noto_ttf = TTFont(noto.path)
-        #korean_ttf = TTFont('NotoSansKR-Regular.otf')
-        korean_ttf = TTFont(korean.path, fontNumber=1)
-        #japanese_ttf = TTFont('rounded-mgenplus-1cp-regular.ttf')
-        japanese_ttf = TTFont(japanese.path, fontNumber=0)
+        noto_ttf = TTFont('static/fonts/NotoSans-Regular.ttf')
+        korean_ttf = TTFont('static/fonts/NotoSansKR-Regular.otf')
+        japanese_ttf = TTFont('static/fonts/rounded-mgenplus-1cp-regular.ttf')
 
         def has_glyph(font, glyph):
             for table in font['cmap'].tables:
